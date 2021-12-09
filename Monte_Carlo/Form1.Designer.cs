@@ -30,11 +30,11 @@ namespace Monte_Carlo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.PIC = new System.Windows.Forms.PictureBox();
             this.GENERATE = new System.Windows.Forms.Button();
             this.NodeCountY = new System.Windows.Forms.ComboBox();
@@ -50,15 +50,9 @@ namespace Monte_Carlo
             this.label1 = new System.Windows.Forms.Label();
             this.timer_main = new System.Windows.Forms.Timer(this.components);
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Angle_Z = new System.Windows.Forms.TrackBar();
-            this.Angle_Y = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.PIC)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_Z)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_Y)).BeginInit();
             this.SuspendLayout();
             // 
             // PIC
@@ -212,64 +206,37 @@ namespace Monte_Carlo
             // 
             // chart1
             // 
-            chartArea2.AxisX.Minimum = 0D;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.AxisX.Minimum = 0D;
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(803, 13);
             this.chart1.Name = "chart1";
-            series4.BorderWidth = 2;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.DarkOrchid;
-            series4.Legend = "Legend1";
-            series4.Name = "МКШ/9";
-            series5.BorderWidth = 2;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Color = System.Drawing.Color.Crimson;
-            series5.Legend = "Legend1";
-            series5.Name = "МКШ*4/9";
-            series6.BorderWidth = 2;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Color = System.Drawing.Color.MediumSeaGreen;
-            series6.Legend = "Legend1";
-            series6.Name = "МКШ";
-            this.chart1.Series.Add(series4);
-            this.chart1.Series.Add(series5);
-            this.chart1.Series.Add(series6);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.DarkOrchid;
+            series1.Legend = "Legend1";
+            series1.Name = "МКШ/9";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Crimson;
+            series2.Legend = "Legend1";
+            series2.Name = "МКШ*4/9";
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.MediumSeaGreen;
+            series3.Legend = "Legend1";
+            series3.Name = "МКШ";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
             this.chart1.Size = new System.Drawing.Size(820, 300);
             this.chart1.TabIndex = 4;
             this.chart1.Text = "chart1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(803, 321);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(513, 442);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // Angle_Z
-            // 
-            this.Angle_Z.Location = new System.Drawing.Point(802, 769);
-            this.Angle_Z.Name = "Angle_Z";
-            this.Angle_Z.Size = new System.Drawing.Size(514, 45);
-            this.Angle_Z.TabIndex = 6;
-            this.Angle_Z.Scroll += new System.EventHandler(this.Angle_Z_Scroll);
-            // 
-            // Angle_Y
-            // 
-            this.Angle_Y.Location = new System.Drawing.Point(1322, 321);
-            this.Angle_Y.Name = "Angle_Y";
-            this.Angle_Y.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.Angle_Y.Size = new System.Drawing.Size(45, 441);
-            this.Angle_Y.TabIndex = 7;
-            this.Angle_Y.Scroll += new System.EventHandler(this.Angle_Y_Scroll);
             // 
             // Form1
             // 
@@ -277,9 +244,6 @@ namespace Monte_Carlo
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1734, 808);
-            this.Controls.Add(this.Angle_Y);
-            this.Controls.Add(this.Angle_Z);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PIC);
@@ -292,11 +256,7 @@ namespace Monte_Carlo
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_Z)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Angle_Y)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -317,9 +277,6 @@ namespace Monte_Carlo
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Maximum_MKSH;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TrackBar Angle_Z;
-        private System.Windows.Forms.TrackBar Angle_Y;
     }
 }
 

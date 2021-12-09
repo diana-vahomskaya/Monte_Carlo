@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -50,8 +51,6 @@ namespace Monte_Carlo
         int MonteCarloStep;
 
         double angleZ, angleY, mult;
-
-        Drawer3D drw;
 
         private Node[,] _nodes;
         private double[,] _nodes3D;
@@ -214,17 +213,6 @@ namespace Monte_Carlo
             timer_main.Stop();
         }
 
-        private void Angle_Z_Scroll(object sender, EventArgs e)
-        {
-            angleZ = Angle_Z.Value * 5;
-            drw.Draw(_nodes3D, angleZ, angleY, mult);
-        }
-
-        private void Angle_Y_Scroll(object sender, EventArgs e)
-        {
-            angleY = Angle_Y.Value * 5;
-            drw.Draw(_nodes3D, angleZ, angleY, mult);
-        }
 
         private void isAutoStop_CheckedChanged(object sender, EventArgs e)
         {
@@ -388,17 +376,19 @@ namespace Monte_Carlo
                                         }
                                     }
                                     count_nodes[i, k] = atoms_counter;
+                                    using (FileStream fs = new FileStream("C:/Users/Diana/Desktop/Monte-Carlo/win.txt", FileMode.Append, FileAccess.Write))
+                                    {
+                                        StreamWriter sw = new StreamWriter(fs);
+                                        sw.WriteLine(i + "     " + k + "      " + count_nodes[i,k] + "      ");
+                                        sw.Flush();
+                                        sw.Close();
+                                        fs.Close();
+                                    }
                                 }
                             }
                             
                         }
                     }
-                    _nodes3D = flat(middle_x, middle_y, count_nodes);
-
-                    drw = new Drawer3D(pictureBox1);
-                  //  drw.resize(new double[] { -2, 2, -2, 2, 0, 1 });
-                    mult = 1;
-                    drw.Draw(_nodes3D, angleZ, angleY, mult);
 
                 }
             }
@@ -430,23 +420,6 @@ namespace Monte_Carlo
             CreateGrid();
             RePaintBitmap(_nodes);            
         }
-        double[,] flat(int N, int M, double[,] to_flat)
-        {
-            double[,] flatten = new double[N, M];
-            double max = 0;
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j < M; j++)
-                {
-                    if (to_flat[i, j] > max) max = to_flat[i, j];
-                }
-            for (int i = 0; i < N; i++)
-                for (int j = 0; j < M; j++)
-                {
-                    flatten[i, j] = to_flat[i, j] / max;
-                }
-
-            return flatten;
-        }
-
+       
     }
 }
